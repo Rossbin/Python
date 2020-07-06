@@ -10,13 +10,13 @@
 # -*- coding:UTF-8 -*-
 ```
 ## 函数格式
-'''
+```
     def main():
         # 主函数
         pass
     if __name__ == '__main__'
         main()
-'''
+```
 ### Python 编译为exe
 
 # IP代理（爬虫）
@@ -37,6 +37,7 @@
 
 ** (表示乘方)   //(表示除取整) a in b (成员运算符)
 # 字符串切片：
+```
 a = 'afewfa'
 print(a[0])    输出第一个
 print(a[0:3])  从第下表为0的取到第3个字符
@@ -58,39 +59,45 @@ a.isnumeric()    判断a中是否全为数字
 a.strip('*')     去除*号
 a.lstrip()或a.rstrip()
 a.split（'.'）   以点标识分隔
-
+```
 
 
 # 列表：
 (有序)
 li = ['xiaoguo','xiaoming',123]
-## 增
+### 增
+```
 li.insert(0,'first')   在字典下表为0处出入first
 li.append('last')      在末尾插入last
-## 删
+```
+### 删
+```
 li.pop()               删除最后一个
 del li[2:4]            批量删除从下表为2开始到第4个
 li.remove('xiaoguo')   精确删除
 li.clear()             删除所有
-## 改
+```
+### 改
 li[2]='csdc'           修改下表为2的
 ## 查
+```
 li.count('xiaoming')   查询列表中'xiaoming'的个数
 li.index('xiaoming')   查询列表中'xiaoming'的列表位置
 ss.sort()              将列表排序
-
+```
 
 
 # 字典
 (无序,键值对)
 dic = {"name":"xiaoguo","age":18,"job":"driver"}
-## 增
+### 增
 dic["addr"] = "menyuan"    在字典中添加
-## 删
+### 删
 dic.pop("job")             在字典中删除job的键值对
-## 改
+### 改
 dic["age"] = 21             修在字典中age的值
-## 查
+### 查
+```
 for key,value in dic.items():
     print(key+"--->"+value)    查看键值对
 
@@ -101,24 +108,24 @@ for i in dic:
 
 print(dic.keys())              查看有格式的值
 print(dic.values())            查看有格式的键
-
+```
 
 # 集合 
 (无序，不重复)
 set1 = {1,53,4,3,}
-## 增
+### 增
 set1.add('sad')
-## 删
+### 删
 set1.remove(3)
 set1.pop()                     随机删除
 set1.clear()
-## 取交集
+### 取交集
 print(set1 & set2)
-## 取并集
+### 取并集
 print(set1 | set2)
-## 取差集
+### 取差集
 print(set1 - set2)
-## 取反交集
+### 取反交集
 print(set1 ^ set2)
 
 
@@ -126,18 +133,20 @@ print(set1 ^ set2)
 无法修改，只能查
 toupl = ("xiaoguo","xiaohong","xiaoming")
 
-## 转换
+### 转换
 li = list(touple)              元组转列表
 set2 = set(touple)             元组变集合
 
 # 循环
+```
 for i in range (1,11,2)
     print(i)
-
+```
 ------------------------------------------------
 
 # 文件操作
 ### 读文件
+```
 f = open("a.text",'r',encoding='utf-8')
 data = f.read()
 print(data)
@@ -145,18 +154,22 @@ f.readline()              只读取一行
 f.readlines()             把文件的每一行加入到列表中
 f.read(4)                 每次读取4个字
 f.close()
+```
 ### 写文件
+```
 f = open('a.tex','w',encoding='utf-8')
 f.write('neirong')         覆盖写入
 'r'----->'a'               追加写入
 f.write('fads')
-f.close()                   
+f.close()         
+```          
 ###  免关闭操作文件
+```
 with open('./a.txt','w') as f
     f.write()
-
-
+```
 # 控制操作系统
+```
 import os
 print(os.path.isfile('C:/Users/31650/Desktop/a.txt'))    判断是否存存在
 os.mkdir('c:/Users/31650/Desktop/a)         创建文件夹
@@ -166,7 +179,7 @@ print(os.system('ipconfig'))                直接执行操作系统的命令
 print(os.system('dir'))                     查看当前目录
 print(os.system('netstat -ano'))            查看该系统的所有端口
 print(os.system('whoami'))                  谁在操作该电脑
-
+```
 
 
 ` with open可以用逗号打开多个文件句柄 `
@@ -185,20 +198,23 @@ def 函数名():
     （函数体）
 
 #### 有返回值
+```
 def 函数名():
     （函数体）
     return 返回值
-
+```
 #### 带参函数 
 ###### 默认参数
 `形参可以带默认，例如（x=2）`
 `默认参数可以是一个可变数据类型,如list、dic、tuple、set`
+```
 def 函数名(形参):  `可以为列表`
     （函数体）
     return 返回值
-
+```
 ###### 不定长参数(元组)
 `*args为关键字`
+```
 def fun1(name,age,*args):
     print(name)
     print(age)
@@ -207,20 +223,22 @@ def fun1(name,age,*args):
 t = ('a','b','c','d')   
 （以元组的方式进行传输）
 fun1(*t)  `传入实参时前面要加*`
-
+```
 ###### 传入字典到函数
 `dic为字典名`
+```
 def fun2(**dic):
     print(dic)
     pass
 dic1 = {'name':'xiaoguo','age':23}
 fun2(**dic1)    `传入实参时前面要加**`
-
+```
 ###### 多种参数传递
 `*args,**kwargs为关键字`
+```
 def fun3(a,v,*args,**kwargs):
     pass
-
+```
 
 #### 匿名函数
 x = lambda y,z:y+z
@@ -231,6 +249,7 @@ x = lambda y,z:y+z
 
 #### 嵌套函数
 * 应用上一层的变量,会改变上一层的值 `nonlocal b` 
+```
 def add_b():
     b = 1
     def do_global():
@@ -259,11 +278,12 @@ def max4(a,b,c,d):
     mid3 = max(mid2,d)
     return mid3
     pass
-
+```
 
 #### 函数名代表为内存地址
 * 所以函数名可以用变量代替
 `不加括号为内存地址，加括号为运行`
+```
 def f1():
     print('i am fu1')
     pass
@@ -279,8 +299,9 @@ dic = {'hanshu1':f1,'hanshu2':f2,'hanshu3':f3}
 
 li[1]()
 dic['hanshu3']()
-
+```
 #### 闭包函数
+```
 def func():
     name = 'xiaoguo'
     def inner():
@@ -308,8 +329,9 @@ def wrapper():
 f = wrapper()
 i = f()
 i()
-
+```
 ###### 闭包传参
+```
 def func(a,b):
     def inner(x):
         return a*x+b
@@ -334,9 +356,10 @@ def timer(func):
     pass
 f = timer(func1)
 f()
-
+```
 # 装饰器
 ###### 不带参数
+```
 import time
 def timer(fun):
     def inner():
@@ -351,8 +374,9 @@ def timer(fun):
 def func1():
     print('i am a zhuangshiqi')
     pass
-
+```
 ###### 带参数的
+```
 def timer(fun):
     def inner(a):
         start = time.time()
@@ -369,9 +393,10 @@ def func1(a):
     print('haha,sleep2')
     pass
 fun1(2)
-
+```
 
 * 带不定长参数的
+```
 def func(fun):
     def inner(*args,**kwargs):
         fun(args,kwargs)
@@ -384,9 +409,10 @@ def func1(*args,**kwargs):
     print(args,kwargs)
     pass
 func1('A','df',23,'fa23',name='xiaoguo',age='23')
-
+```
 
 ###### 查看函数的本名称和注释
+```
 def func1():
     '''我是一个注释'''
     print('i am not a zhushi')
@@ -394,9 +420,10 @@ def func1():
 f = func1
 print(func1.__doc__)   # 查看注释
 print(f.__name__)      # 查看原函数名
-
+```
 
 ###### 装饰器传参
+```
 def out(flag):
     def func(fun):
         def inner(a):
@@ -440,13 +467,14 @@ def second(fun):
 def func():
     print('i am a fun')
     pass
-
+```
 * 如果有两个装饰器被引用了，则运行顺序是：先运行第一个，然后运行第二个，再运行函数，再运行第二个，再运行第一个
 
 -------------------------------------------------------------------
 
 # 迭代器
 * 判断迭代器
+```
 from collections import Iterable
 l = [1,2,3,4]
 s = {1,2,3,4}
@@ -456,9 +484,10 @@ print(isinstance(l,Iterable))
 print(isinstance(s,Iterable))
 print(isinstance(d,Iterable))
 print(isinstance(t,Iterable))
-
+```
 
 * 迭代器迭代(一个一个的取提取)
+```
 l = [1,2,3,4]
 l_iter = l.__iter__()
 item = l_iter.__next__()
@@ -466,8 +495,9 @@ item1 = l_iter.__next__()
 item2 = l_iter.__next__()
 item3 = l_iter.__next__()
 print(item)
-
+```
 * 异常捕获(try)
+```
 l = [1,2,3,4]
 l_iter = l.__iter__()
 while True:
@@ -477,20 +507,23 @@ while True:
     except:
         print('捕获异常，break')
         break
+```
 * 如果try捕获异常就结束
 
 
 # 标准python编写
+```
 # -*- coding=utf-8 -*-
 def main()
     pass
 if __name__ = '__main__'
     main()
-
+```
 -----------------------------------------------
 
 # 生成器(yield,next())
 * yield 把函数中断，再将结果return出去
+```
 def a_fun():
     a = 1
     print('将a赋值')
@@ -508,9 +541,10 @@ def main():
 
 if__name__=='__main__':
     main()
-
+```
 
 #### 包子生产线
+```
 def produce():
     for i in range (1,100):
         yield "生产了%s个包子"%i
@@ -524,9 +558,10 @@ def mian():
         if num == 10:
             break
     pass
-
+```
 
 #### yield 传参(g.send())
+```
 def gen():
     print(123)
     canshu = yield 1
@@ -543,20 +578,22 @@ def main():
     pass
 if __name__ == __main__:
     main()
-
+```
 --------------------------------------------------------------
 
 # 列表推导式 （尽量用一条线的式子表达出来）
 #### 30以内可以被3整除
+```
 def mian():
     mul = [i for i in range(30) if i % 3 == 0]
     print(mul)
     pass
 if __name__ == '__main__':
     main()
-
+```
 #### 利用函数列表推导式
 * 30以内能被3整除数的平方
+```
 def squard(x):
     return x*x
     pass
@@ -565,19 +602,21 @@ def main():
     pass
 if __name__ == '__main__'
     main()
-
-# almond--杏仁，chestnut--栗子，date--红枣，coconut--椰子，
-# fig--无花果，hazelnut--榛子，greengage--青梅，haw--山楂，kumquat--金桔
+```
+####  almond--杏仁，chestnut--栗子，date--红枣，coconut--椰子，
+#### fig--无花果，hazelnut--榛子，greengage--青梅，haw--山楂，kumquat--金桔
+```
 def main():
     fruits = [['apple','banana','orange',almond','chestnut','date','coconut'],['fig','hazelnut','grape','greengage','haw','kumquat']]
     print(name for lst in fruits for name in lst if name.count('a')>=2)
     pass
 if __name__ == __main__:
     main()
-
+```
 # *********************
 # 字典推导式(经典面试题)
 # 将字典中的键值对对调
+```
 def main():
     dic1 = {'a':1,'b':2}
     dic2 = {dic1[k]:k for k in dic1}
@@ -585,10 +624,11 @@ def main():
     pass
 if __name__ == '__main__:
     main()
-
+```
 
 
 # 集合推导式
+```
 def main():
     li = [1,2,3,4,-1,-2]
     s = {x*x for x in li}
@@ -596,7 +636,7 @@ def main():
     pass
 if __name__ == '__main__'
     main()
-
+```
 -------------------------------------------------------------------------------
 
 
@@ -605,6 +645,7 @@ if __name__ == '__main__'
 `eval`:执行字符串所代表的代码，并返回结果
 
 * eval会打传入的字符串当作python的代码执行，有一定的安全风险
+```
 def main():
     a = input('Please input your name: ')
     print('Your name is: ',a)
@@ -613,10 +654,11 @@ def main():
     pass
 if __name__ == '__main__'
     main()
-
+```
 **********************************************************************************
 
 `exec`：所展示的效果和eval差不多
+```
 import os
 def main():
     s = 'os.system('dir')
@@ -625,8 +667,9 @@ def main():
     pass
 if __name__ == '__main__':
     main()
-
+```
 #### 在Windows计算系统中添加新用户
+```
 import os
 def main():
     s = 'os.system("net User 用户 密码 /add")'  # 在User下创建一个用户
@@ -635,7 +678,7 @@ def main():
     pass
 if __name__ == '__main__'
     main()
-
+```
 
 
 
@@ -677,14 +720,15 @@ if __name__ == '__main__'
 * 引入包
 `import pa.test123`
 * 使用包内的模块的函数
-`pa.test123.fun1()
+`pa.test123.fun1()`
+```
 import pa.test123
 def main():
     pa.test123.fun1()
     pass
 if __name__ == __main__:
     main()
-
+```
 
 # **********************************************************************
 # python自带的模块
